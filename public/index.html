@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ESP Firebase App</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <!-- https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <!-- jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+    <script src="index.css"></script>
+
+    <style>
+        #btn{
+            background-color: transparent;
+            color: #000;
+            border: 1px solid #000;
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+    </style>
+  </head>
+
+  <body>
+    <h1>ESP32 Firebase Web App Example</h1>
+    <p>Reading int: <span id="reading-int"></span></p>
+    <p>Reading float: <span id="reading-float"></span></p>
+    <p>Reading bool: <span id="reading-bool"></span></p>
+    <button id="btn">Click me!</button>
+  </body>
+
+  <script src="app.js" ></script>
+  <script>
+    
+    $("#btn").on('click', () => {
+        let data = $("#reading-bool").text()
+        if (data === "1") {
+            data = 0;
+        }else{
+            data = 1
+        }
+        writeUserData(data)
+    })
+  </script>
+</html>
